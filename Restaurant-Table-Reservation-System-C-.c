@@ -54,31 +54,19 @@ void printReserv(reservation reserv[MAX_SIZE_OF_RESERV], int n)
 
 void printMenuOfFunc(void)
 {
-  printf("\n _____________________________________________________________________________________________\n");
-  printf("|                                                                                             |\n");
-  printf("|                                            MENU                                             |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [1] Add a new reservation                                                                  |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [2] Display all reservations                                                               |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [3] Search for a reservation by customer name                                              |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [4] Display reservation for a specific date                                                |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [5] Delete reservation by table number                                                     |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [6] Edit an existing reservation                                                           |\n");
-  printf("|_____________________________________________________________________________________________|\n");
-  printf("|                                                                                             |\n");
-  printf("|  [0] Exit                                                                                   |\n");
-  printf("|_____________________________________________________________________________________________|\n");
+    const char *menu[] = {
+        "[1] Add a new reservation",
+        "[2] Display all reservations",
+        "[3] Search for a reservation by customer name",
+        "[4] Display reservation for a specific date",
+        "[5] Delete reservation by table number",
+        "[6] Edit an existing reservation",
+        "[0] Exit"
+    };
+
+    printf("\n========== MENU ==========\n");
+    for (int i = 0; i < 7; i++)
+        printf("%s\n", menu[i]);
 }
 
 void addNewReservation(reservation reserv[MAX_SIZE_OF_RESERV])
