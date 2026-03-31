@@ -341,44 +341,51 @@ void editReservation(reservation reserv[MAX_SIZE_OF_RESERV])
   if (edited)
     printf("\033[32mReservation successfully changed\033[0m\n");
 }
-int main()
+int main(void)
 {
-  reservation reserv[MAX_SIZE_OF_RESERV] = {0};
-  printMenuOfFunc();
-  int nomerDii = 10;
-  while (nomerDii)
-  {
-    printf("\033[34mEnter the reservation action number and press ENTER:\033[0m");
-    scanf("%d", &nomerDii);
-    if (nomerDii < 0 || nomerDii > 6)
+    reservation reserv[MAX_SIZE_OF_RESERV] = {0};
+    int nomerDii;
+
+    printMenuOfFunc();
+
+    while (1)
     {
-      printf("\033[31The action number you entered is incorrect. Please try again.\033[0m\n");
-      continue;
+        printf("\033[34mEnter the reservation action number and press ENTER:\033[0m ");
+
+        if (scanf("%d", &nomerDii) != 1)
+        {
+            printf("\033[31mInvalid input. Please enter a number.\033[0m\n");
+            while (getchar() != '\n'); 
+            continue;
+        }
+
+        if (nomerDii == 0)
+            break;
+
+        switch (nomerDii)
+        {
+            case 1:
+                addNewReservation(reserv);
+                break;
+            case 2:
+                printAllReservs(reserv);
+                break;
+            case 3:
+                searchReservationByNameOfClient(reserv);
+                break;
+            case 4:
+                searchReservationByDate(reserv);
+                break;
+            case 5:
+                deleteReservation(reserv);
+                break;
+            case 6:
+                editReservation(reserv);
+                break;
+            default:
+                printf("\033[31mThe action number you entered is incorrect. Please try again.\033[0m\n");
+        }
     }
-    if (nomerDii == 1)
-    {
-      addNewReservation(reserv);
-    }
-    if (nomerDii == 2)
-    {
-      printAllReservs(reserv);
-    }
-    if (nomerDii == 3)
-    {
-      searchReservationByNameOfClient(reserv);
-    }
-    if (nomerDii == 4)
-    {
-      searchReservationByDate(reserv);
-    }
-    if (nomerDii == 5)
-    {
-      deleteReservation(reserv);
-    }
-    if (nomerDii == 6)
-    {
-      editReservation(reserv);
-    }
-  }
-  return 0;
+
+    return 0;
 }
