@@ -40,3 +40,10 @@ gcc main.c -o reservation
 - Maximum number of reservations: 20
 - Console-based application
 - Designed for educational purposes
+
+- ## Author
+
+**Arsen** — Backend Developer (C++)
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArsenBo1chuk)
+[![Telegram](https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Arsen_Bo1chuk)
